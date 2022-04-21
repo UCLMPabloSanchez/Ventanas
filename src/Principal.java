@@ -47,6 +47,7 @@ public class Principal extends JFrame{
                     }
 
                 }
+
                 else{
                     JOptionPane.showMessageDialog(null,"Contraseña y/o usuario no valido","ERROR",JOptionPane.ERROR_MESSAGE);
                     textField1.setText(null);
