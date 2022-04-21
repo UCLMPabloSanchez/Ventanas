@@ -29,6 +29,7 @@ public class Entrada extends JFrame implements Serializable {
     private JTextField textField6;
     private JTextArea textArea1;
     private JButton anularButton;
+    private JButton ExamenButton;
 
     private static Hotel h;
 
@@ -252,6 +253,22 @@ public class Entrada extends JFrame implements Serializable {
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
+                }
+            }
+        });
+        ExamenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(h.buscaCliente(Integer.parseInt(textField7.getText()))==null){
+                    JOptionPane.showMessageDialog(null,"No se pudo encontrar al cliente.","ERROR",JOptionPane.ERROR_MESSAGE);
+                }else{
+                    textField1.setText(h.buscaCliente(Integer.parseInt(textField7.getText())).getNombre());
+                    textField2.setText(h.buscaCliente(Integer.parseInt(textField7.getText())).getApellido());
+                    textField4.setText(String.valueOf(h.buscaCliente(Integer.parseInt(textField7.getText())).getTelefono()));
+                    textField5.setText(String.valueOf(h.buscaCliente(Integer.parseInt(textField7.getText())).getFechaEntrada()));
+                    textField6.setText(String.valueOf(h.buscaCliente(Integer.parseInt(textField7.getText())).getFechaSalida()));
+                    textField7.setText(String.valueOf(h.buscaCliente(Integer.parseInt(textField7.getText())).getDNI()));
+                    textField8.setText(String.valueOf(h.buscaCliente(Integer.parseInt(textField7.getText())).getNumTarjeta()));
                 }
             }
         });

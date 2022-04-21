@@ -14,6 +14,7 @@ public class Principal extends JFrame{
     FileOutputStream fos = null;
     ObjectOutputStream salida = null;
 
+
     public Principal(){
         setContentPane(panel1);
         setBounds(450,300,500,270);
@@ -38,12 +39,13 @@ public class Principal extends JFrame{
                     Entrada myIntro = null;
                     try {
                         myIntro = new Entrada();
+                        myIntro.setVisible(true);
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     } catch (ClassNotFoundException ex) {
                         ex.printStackTrace();
                     }
-                    myIntro.setVisible(true);
+
                 }
                 else{
                     JOptionPane.showMessageDialog(null,"Contraseña y/o usuario no valido","ERROR",JOptionPane.ERROR_MESSAGE);
